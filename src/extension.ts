@@ -1,17 +1,22 @@
 // The module 'vscode' contains the VS Code extensibility API
 //
 // Import the module and reference it with the alias vscode in your code below
+import exp = require("constants");
 import * as vscode from "vscode";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-  const imgPath = vscode.Uri.file(context.asAbsolutePath("image.jpg")).with({
+  // create a basic
+  let disposable = vscode.commands.registerCommand("extension.sayHello", () => {
+    vscode.window.showInformationMessage("Hello World!");
+  });
+
+  const imgPath = vscode.Uri.file(context.asAbsolutePath("img.jpeg")).with({
     scheme: "vscode-resource",
   });
 
-  // show a info message when the extension is activated
-  vscode.window.showInformationMessage("Hello World from vscode-extension!");
+  vscode.window.showInformationMessage(imgPath.toString());
 
   const decorationType = vscode.window.createTextEditorDecorationType({
     backgroundColor: `url(${imgPath}) no-repeat center`,
@@ -22,10 +27,10 @@ export function activate(context: vscode.ExtensionContext) {
       margin: "0 auto",
     },
   });
-	
-    const activeEditor = vscode.window.activeTextEditor;
 
-	if (activeEditor) {
+  const activeEditor = vscode.window.activeTextEditor;
+
+  if (activeEditor) {
     const range = new vscode.Range(
       activeEditor.document.lineAt(0).range.start,
       activeEditor.document.lineAt(
