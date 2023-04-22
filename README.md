@@ -31,3 +31,7 @@ Ex:
 Find more emojis here:
 [Git Commit Emoji](https://gist.github.com/parmentf/035de27d6ed1dce0b36a)
 
+## References
+This project is heavily inspired by [Emoji-log](https://github.com/ahmadawais/Emoji-Log-VSCode)
+
+
