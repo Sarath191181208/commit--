@@ -1,7 +1,18 @@
 {
   "name": "commit_plus_plus",
   "displayName": "commit++",
-  "description": "",
+  "description": "A VS Code extension to create commits with emoji",
+  "author": {
+    "name": "V.S.Sarath Chandra",
+    "email": "vssarathc04@gmail.com"
+  },
+  "icon": "images/logo.png",
+  "license": "MIT",
+  "publisher": "vssarathchandra",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmadawais/Emoji-Log-VSCode"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.77.0"
@@ -20,8 +31,8 @@
         "category": "commit++",
         "title": "Create a new commit with emoji",
         "icon": {
-          "dark": "images/icons8-smiling-sun-96.png",
-          "light": "images/icons8-smiling-sun-96.png"
+          "dark": "images/logo.png",
+          "light": "images/logo.png"
         }
       }
     ],
@@ -34,7 +45,6 @@
         }
       ]
     },
-    
     "properties": {
       "commit++.additionalCommitPrefixes": {
         "type": "array",
