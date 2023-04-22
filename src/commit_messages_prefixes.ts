@@ -1,36 +1,36 @@
 interface IMessagesPrefix {
-  readonly emoji: any;
+  readonly prefix: any;
   readonly description: any;
 }
 
 let messagePrefixes: Array<IMessagesPrefix> = [
   {
-    emoji: "✨ NEW:",
+    prefix: "✨ NEW:",
     description: "Add something entirely new.",
   },
   {
-    emoji: "🛠️ Refactor:",
+    prefix: "🛠️ Refactor:",
     description: "Improve piece of code like refactoring.",
   },
   {
-    emoji: "🚧 WIP:",
+    prefix: "🚧 WIP:",
     description: "Work in progress.",
   },
   {
-    emoji: "🐞FIX:",
+    prefix: "🐞FIX:",
     description: "Fixed a bug.",
   },
   {
-    emoji: "📖 DOC:",
+    prefix: "📖 DOC:",
     description: "Anything documentation related.",
   },
   {
-    emoji: "🧪 TEST:",
+    prefix: "🧪 TEST:",
     description: "Commits related to testing.",
   },
   {
-    emoji: "💥 BREAKING:",
+    prefix: "💥 BREAKING:",
     description: "Change that breaks previous versions.",
   },
 ];
-export default messagePrefixes;
+export  {messagePrefixes, IMessagesPrefix};
