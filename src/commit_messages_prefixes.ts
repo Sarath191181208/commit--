@@ -3,7 +3,7 @@ interface IMessagesPrefix {
   readonly description: any;
 }
 
-let messagePrefixes: Array<IMessagesPrefix> = [
+let messagePrefixesStandard: Array<IMessagesPrefix> = [
   {
     prefix: "✨ NEW:",
     description: "Add something entirely new.",
@@ -33,4 +33,4 @@ let messagePrefixes: Array<IMessagesPrefix> = [
     description: "Change that breaks previous versions.",
   },
 ];
-export  {messagePrefixes, IMessagesPrefix};
+export  {messagePrefixesStandard, IMessagesPrefix};

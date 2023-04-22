@@ -4,7 +4,7 @@
 import exp = require("constants");
 import * as vscode from "vscode";
 import { GitExtension, Repository } from "./git";
-import { IMessagesPrefix, messagePrefixes } from "./commit_messages_prefixes";
+import { IMessagesPrefix, messagePrefixesStandard } from "./commit_messages_prefixes";
 
 export function activate(context: vscode.ExtensionContext) {
   let disposable = vscode.commands.registerCommand(
@@ -17,7 +17,7 @@ export function activate(context: vscode.ExtensionContext) {
         return;
       }
 
-      let messagePrefixesStandard = [ ...messagePrefixes ]; // copy the standard commit prefixes
+      let messagePrefixes = [ ...messagePrefixesStandard ]; // copy the standard commit prefixes
       const additionalMessagePrefixes: IMessagesPrefix[] | undefined =
         vscode.workspace
           .getConfiguration("commit++")
@@ -25,13 +25,13 @@ export function activate(context: vscode.ExtensionContext) {
 
       // if there are additional commit prefixes add them to the standard ones
       if (additionalMessagePrefixes !== undefined) {
-        messagePrefixesStandard = [...messagePrefixesStandard, ...additionalMessagePrefixes];
+        messagePrefixes = [...messagePrefixes, ...additionalMessagePrefixes];
       }
 
-      console.log(messagePrefixesStandard);
+      console.log(messagePrefixes);
 
       // create the quick pick items
-      const quickPickItems = messagePrefixesStandard.map((prefix) => {
+      const quickPickItems = messagePrefixes.map((prefix) => {
         return {
           label: prefix.prefix,
           description: prefix.description,
@@ -58,7 +58,6 @@ export function activate(context: vscode.ExtensionContext) {
           });
 
           // if there is a repository prefix the message
-
 					if (uri) {
             let selectedRepository = git!.repositories.find((repository) => {
               return (
