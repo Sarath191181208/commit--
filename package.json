@@ -1,6 +1,6 @@
 {
-  "name": "blit-img",
-  "displayName": "blit_img",
+  "name": "commit_plus_plus",
+  "displayName": "commit++",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -9,15 +9,16 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:extension.EmojiLog2"
-  ],
+  "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
+    "type": "object",
+    "title": "Commit++ configuration",
     "commands": [
       {
-        "command": "extension.EmojiLog2",
-        "title": "Hello World",
+        "command": "extension.commit++",
+        "category": "commit++",
+        "title": "Create a new commit with emoji",
         "icon": {
           "dark": "images/icons8-smiling-sun-96.png",
           "light": "images/icons8-smiling-sun-96.png"
@@ -28,10 +29,31 @@
       "scm/title": [
         {
           "when": "scmProvider == git",
-          "command": "extension.EmojiLog2",
+          "command": "extension.commit++",
           "group": "navigation@0"
         }
       ]
+    },
+    
+    "properties": {
+      "commit++.additionalCommitPrefixes": {
+        "type": "array",
+        "description": "Additional prefixes to be added to the list",
+        "default": [],
+        "items": {
+          "type": "object",
+          "properties": {
+            "prefix": {
+              "type": "string",
+              "description": "Emoji or text to be added to the list"
+            },
+            "description": {
+              "type": "string",
+              "description": "Description of the commit prefix"
+            }
+          }
+        }
+      }
     }
   },
   "scripts": {
