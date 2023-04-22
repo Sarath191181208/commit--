@@ -65,6 +65,7 @@ You can author your README using Visual Studio Code. Here are some useful editor
 
 ## For more information
 
+* [Git Commit Emoji](https://gist.github.com/parmentf/035de27d6ed1dce0b36a)
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
