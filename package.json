@@ -1,5 +1,5 @@
 {
-  "name": "commit_plus_plus",
+  "name": "commitplusplus",
   "displayName": "commit++",
   "description": "A VS Code extension to create commits with emoji",
   "author": {
@@ -8,14 +8,14 @@
   },
   "icon": "images/logo.png",
   "license": "MIT",
-  "publisher": "vssarathchandra",
+  "publisher": "VangipuramSrinivasaSarathChandra",
   "repository": {
     "type": "git",
     "url": "https://github.com/ahmadawais/Emoji-Log-VSCode"
   },
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.77.0"
+    "vscode": "^1.52.0"
   },
   "categories": [
     "Other"
